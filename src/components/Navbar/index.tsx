@@ -1,7 +1,8 @@
 'use client'
 import { useState } from "react"
-import { ChevronDown, ChevronUp } from 'lucide-react';
 import Link from "next/link";
+import { Button } from "@/components/button";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export function Navbar() {
  const [open, setOpen] = useState(false)
@@ -33,7 +34,13 @@ export function Navbar() {
     </ul>
     </div>
 
-    <button className="px-4 py-2 bg-emerald-500">Linkedin</button>
+    <div>
+    <Button className="bg-emerald-500 hover:bg-emerald-800 font-mono">
+     <a href="https://www.linkedin.com/in/rafael-canedo-4abaa8197/" target="_blank">
+     Linkedin
+     </a>
+    </Button>
+    </div>
   </div>
  </section>
  )

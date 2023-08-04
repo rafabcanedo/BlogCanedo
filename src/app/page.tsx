@@ -5,11 +5,11 @@ export default function Home() {
    <section className='pt-16 pl-12'>
     <div className="flex flex-col">
     <h3 className="text-title text-4xl">Falaa, Pessoal !</h3>
-     <span className="text-title text-2xl">
+     <span className="text-title text-2xl font-mono">
       Eu sou o Rafael Canedo, desenvolvedor Web/Mobile
       e amante de jogos e tecnologia
      </span>
-     <span className="text-[#787575] text-lg">
+     <span className="text-[#787575] text-lg font-mono">
       Você está no meu Blog. Aqui é meu espaço de criatividade,
       onde vai encontrar posts de diversos tipos de assuntos baseados <br />
       em minha experiencia profissional, social e pessoal.

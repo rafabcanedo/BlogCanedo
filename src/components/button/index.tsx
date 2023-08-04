@@ -5,7 +5,7 @@ import { tv, VariantProps } from "tailwind-variants"
 // Styles Button default
 // Create variants Success
 const button = tv({
- base: 'text-sm rounded items-center justify-center bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-200 data-[success=true]:bg-emerald-600 data-[success=true]:hover:bg-emerald-800',
+ base: 'flex text-sm rounded items-center justify-center bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-200 data-[success=true]:bg-emerald-600 data-[success=true]:hover:bg-emerald-800',
  variants: {
   size: {
    default: 'h-10 px-4',

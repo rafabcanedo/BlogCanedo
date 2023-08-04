@@ -6,7 +6,7 @@ export default function Test() {
     <Button success className="w-20">Sign In</Button>
     <Button size="sm">Sign In</Button>
     <Button size="xs">Sign In</Button>
-    <Button>Sign In</Button>
+    <Button className="bg-emerald-500 hover:bg-emerald-800">Sign In</Button>
   </div>
  )
 }
