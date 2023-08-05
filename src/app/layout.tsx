@@ -8,6 +8,7 @@ import {
 } from 'next/font/google'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import { Providers } from '@/components/Providers'
 
 const roboto = Roboto({ 
   subsets: ['latin'], 
@@ -36,11 +37,13 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.variable} ${baiJamjuree.variable} ${poppins.variable} bg-background font-sans w-full pr-8 pl-8`}>
+       <Providers>
        <Navbar />
        {children}
        <Footer />
+       </Providers>
       </body>
     </html>
   )
