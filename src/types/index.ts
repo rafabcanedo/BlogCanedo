@@ -16,3 +16,7 @@ export interface Post {
  };
  _createdAt: string;
 }
+
+export interface TitleProps {
+ title: string;
+}

@@ -3,16 +3,17 @@ import { useState } from 'react';
 import { Socials } from '@/components/Socials';
 import { Button } from '@/components/button';
 import { Linkedin, Instagram, Github, Code, SendHorizonal } from 'lucide-react';
+import { Title } from '@/components/Title';
 
 export default function Contact() {
 
  const [isLoading, setIsLoading] = useState(false)
 
  return(
-  <section>
+  <section className='flex flex-col items-center justify-center'>
    <div className='w-[448px] rounded overflow-hidden'>
    <div className='flex flex-col text-center justify-center mt-16 gap-6'>
-    <h3 className='text-xl text-title underline decoration-primary'>Minhas Redes sociais</h3>
+    <Title title="Minhas Redes Sociais" />
     
     <div className='divide-y-2 divide-zinc-300'>
     
@@ -41,8 +42,8 @@ export default function Contact() {
    </div>
    </div>
 
-   <div className='flex flex-col text-center justify-center mt-16'>
-    <h3 className='text-xl text-title underline decoration-primary'>Fique ligado nas novidades</h3>
+   <div className='flex flex-col text-center justify-center mt-24'>
+   <Title title="Fique ligado nas novidades" />
     <span className='text-[#787575]'>Receba Notificação e não perca nenhum post!</span>
     <form className='mt-4'>
      <div className='flex flex-col items-center'>

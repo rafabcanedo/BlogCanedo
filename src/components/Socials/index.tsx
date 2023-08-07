@@ -11,9 +11,9 @@ export function Socials({ text, icon: Icon, href }: SocialsProps) {
      </p>
     </div>
     <div>
-     <button className='w-8 h-8 rounded flex items-center justify-center bg-indigo-600 hover:bg-indigo-700'>
+     <button className='w-8 h-8 rounded flex items-center justify-center bg-emerald-500 hover:bg-emerald-800'>
       <a href={href} target='_blank'>
-      <SendHorizonal className='w-3 h-3 text-primary' />
+      <SendHorizonal className='w-3 h-3 text-gray-700' />
       </a>
      </button>
     </div>
