@@ -1,0 +1,13 @@
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+    "name": "Rafael Canedo",
+    "email": "rafa@gmail.com",
+    "phone": 14996229445,
+    "password": "123456",
+    "confirm_password": "123456"
+}
+
+###
+GET http://localhost:3333/users
