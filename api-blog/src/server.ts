@@ -1,28 +1,10 @@
-import fastify from "fastify";
+import express from "express";
+import { config } from "dotenv";
 
-import fastifyCors from "@fastify/cors";
+config();
 
-import { serializerCompiler, validatorCompiler } from "fastify-type-provider-zod";
-import { errorHandler } from "./error-handler";
-import { createUser } from "./routes/create-user";
-import { getUsers } from "./routes/get-users";
+const app = express();
 
-export const app = fastify()
+const port = process.env.PORT || 3333;
 
-app.register(fastifyCors, {
- origin: '*',
-})
-
-app.setValidatorCompiler(validatorCompiler)
-app.setSerializerCompiler(serializerCompiler)
-
-app.register(createUser)
-app.register(getUsers)
-
-app.setErrorHandler(errorHandler)
-
-app.listen({
- port: 3333,
-}).then(() => {
-    console.log('HTTP server running! 🗞️')
-})
+app.listen(port, () => console.log(`Listening api on port ${port} 🗞️`));
