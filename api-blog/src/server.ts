@@ -1,12 +1,16 @@
 import express from "express";
 import { config } from "dotenv";
-import { MongoGetUsersRepository } from "./repository/get-users/mongo-get-users";
-import { GetUsersController } from "./controllers/get-users/get-users";
 import { MongoClient } from "./database/mongo";
+
+import { MongoGetUsersRepository } from "./repository/get-users/mongo-get-users";
 import { MongoCreateUserRepository } from "./repository/create-user/mongo-create-user";
-import { CreateUserController } from "./controllers/create-user/create-user";
 import { MongoUpdateUserRepository } from "./repository/update-user/mongo-update-user";
+import { MongoDeleteUserRepository } from "./repository/delete-user/mongo-delete-user";
+
+import { GetUsersController } from "./controllers/get-users/get-users";
+import { CreateUserController } from "./controllers/create-user/create-user";
 import { UpdateUserController } from "./controllers/update-user/update-user";
+import { DeleteUserController } from "./controllers/delete-user/delete-user";
 
 const main = async () => {
  config();
@@ -47,6 +51,18 @@ const main = async () => {
 
   const { body, statusCode } = await updateUserController.handle({
     body: req.body,
+    params: req.params
+  })
+
+  res.status(statusCode).send(body);
+ })
+
+ app.delete("/users/:id", async (req, res) => {
+  const mongoDeleteUserRepository = new MongoDeleteUserRepository()
+
+  const deleteUserController = new DeleteUserController(mongoDeleteUserRepository)
+
+  const { body, statusCode } = await deleteUserController.handle({
     params: req.params
   })
 
