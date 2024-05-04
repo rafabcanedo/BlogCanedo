@@ -12,7 +12,7 @@ export class MongoDeletePostRepository implements IDeletePostRepository {
     throw new Error("Post not found");
   }
 
-  const { deletedCount } = await MongoClient.db.collection("post").deleteOne({ _id: new ObjectId(id) });
+  const { deletedCount } = await MongoClient.db.collection("posts").deleteOne({ _id: new ObjectId(id) });
 
   if (!deletedCount) {
     throw new Error("Post not deleted");
